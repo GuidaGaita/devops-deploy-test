@@ -7,8 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  REGISTRY: ghcr.io
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  REGISTRY: ghcr.io 
 
 jobs:
   
@@ -48,4 +47,4 @@ jobs:
 
     steps:
       - name: Deploy to Render
-        run: curl --fail --silent --show-error "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        run: curl -f ${{ secrets.RENDER_DEPLOY_HOOK }}
